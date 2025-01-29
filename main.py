@@ -4,22 +4,21 @@ print("Enter the loan principal:")
 principalAmount = int(input())
 
 print("What do you want to calculate?")
+print("type \"m\" for number of monthly payments,")
+print("type \"p\" for the monthly payment:") 
 typePayment = input()
 repayments = 0
-while True:
-    if (typePayment == "m"):
+if (typePayment == "m"):
         print("Enter the monthly payment:")
         monthlyPayments = int(input())
         repayments= principalAmount // monthlyPayments
         print(f"It will take {repayments} months to repay the loan")
-    elif (typePayment == "p"):
+elif (typePayment == "p"):
         print("Enter the number of months:")
         months = int(input())
-        payments 
-        repayments = principalAmount - (months - 1) * 
-        print(f"Your monthly payment = {repayments}")
-    print("What do you want to calculate?")
-    typePayment = input()
-
-
-#Formula : principal−(periods−1)⋅payment
+        basePay = principalAmount // (months)
+        repayments = principalAmount - (months - 1) * basePay
+        if (principalAmount % months == 0):
+            print(f"Your monthly payment = {basePay}")
+        else: 
+            print(f"Your monthly payment = {basePay + 1} and the last payment = {repayments}")
